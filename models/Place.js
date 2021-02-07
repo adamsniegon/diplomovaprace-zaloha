@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const PlaceSchema = new mongoose.Schema({
-    adress: {
+    address: {
         type: String,
         required: [true, "Please add an adress"]
     },

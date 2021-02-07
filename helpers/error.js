@@ -13,6 +13,10 @@ class GeneralError extends Error{
             message: this.message
         }
     }
+
+    getStatusCode() {
+        return this.statusCode;
+    }
 }
 
 class BadRequest extends GeneralError{
