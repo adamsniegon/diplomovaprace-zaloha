@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const PlaceSchema = require('./models/Place');
-require('dotenv/config');
+require('dotenv').config();
 
 /**
  * Connection to mongoDB

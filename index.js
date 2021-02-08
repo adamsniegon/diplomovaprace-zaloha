@@ -2,7 +2,7 @@ const express = require('express');
 const {connection} = require('./dbConnection');
 const placesRoutes = require('./routes/places'); 
 const errorHandler = require('./middleware/errorHandler');
-require('dotenv/config');
+require('dotenv').config();
 
 const app = express();
 
