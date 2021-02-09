@@ -8,8 +8,6 @@ const errorType = require('../helpers/error');
  * @param {*} next 
  */
 const errorHandler = (err, req, res, next) => {
-    console.log(err.getError());
-    console.log(err.getStatusCode());
     if (err instanceof errorType.GeneralError) {
         return res.status(err.getStatusCode()).send(err.getError());
     }
