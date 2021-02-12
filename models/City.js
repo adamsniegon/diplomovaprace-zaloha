@@ -1,11 +1,8 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const axios = require('axios');
 
-const PlaceSchema = new mongoose.Schema({
+const CitySchema = new mongoose.Schema({
     name: {
-        type: String,
-        required: true
+        type: String
     },
     description: {
         type: String,
@@ -24,19 +21,20 @@ const PlaceSchema = new mongoose.Schema({
             coordinates: {
                 type: [Number]
             },
-        },
-        properties: {
-            streetName: String,
-            streetNumber: String,
-            city: String
-        },
-    },
-    cityReference: {
-        type: Schema.Types.ObjectId,
-        ref: 'places'
+        }
     }
 }, {
-    timestamps: true
+    timestamps: true,
+    id: false
 });
 
-module.exports = PlaceSchema;
+CitySchema.virtual('cityPlaces', {
+    ref: 'places',
+    localField: '_id',
+    foreignField: 'cityReference'
+ });
+ 
+ CitySchema.set('toObject', { virtuals: true });
+ CitySchema.set('toJSON', { virtuals: true });
+
+module.exports = CitySchema;

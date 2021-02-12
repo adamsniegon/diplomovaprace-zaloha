@@ -1,5 +1,6 @@
-const {Place} = require('../dbConnection');
+const {Place, City} = require('../dbConnection');
 const {NotFound, BadRequest} = require('../helpers/error');
+const {placeGeocode} = require('../helpers/geocoder');
 
 /**
  * Get all places
@@ -28,12 +29,13 @@ exports.getAllPlaces = async (req, res, next) => {
  */
 exports.addPlace = async (req, res, next) => {
     try {
-        const newPlace = new Place({
-            address: req.body.address
-        });
-        await Place.create(newPlace);
-        res.send(newPlace);
+        const geocodeResult = await placeGeocode(req.body);
+        const cityId = await City.findOne({name: geocodeResult.location.properties.city});
+        geocodeResult.cityReference = cityId._id;
+        await Place.create(geocodeResult);
+        res.send(geocodeResult);
     } catch (error) {
+        console.log(error);
         next(new BadRequest());
     }
 }

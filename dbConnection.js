@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const PlaceSchema = require('./models/Place');
+const CitySchema = require('./models/City');
 require('dotenv').config();
 
 /**
@@ -13,8 +14,10 @@ const connection = mongoose.createConnection(process.env.DB_CONNECTION, {useNewU
  * Models connection
  */
 const Place = connection.model("places", PlaceSchema);
+const City = connection.model("cities", CitySchema);
 
 module.exports = {
     connection,
-    Place
+    Place,
+    City
 }
