@@ -21,7 +21,7 @@ exports.getAllPlaces = async (req, res, next) => {
 }
 
 /**
- * Get all places
+ * Get place by ID
  * @param {*} req 
  * @param {*} res 
  * @param {*} next 

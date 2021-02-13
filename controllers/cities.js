@@ -21,7 +21,7 @@ exports.getAllCities = async (req, res, next) => {
 }
 
 /**
- * Get city
+ * Get city by ID
  * @param {*} req 
  * @param {*} res 
  * @param {*} next 
