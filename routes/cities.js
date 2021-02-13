@@ -3,6 +3,6 @@ const router = express.Router();
 const cityController = require('../controllers/cities');
 
 router.get('/', cityController.getAllCities);
-router.post('/', cityController.addCity);
+router.get('/:id', cityController.getCity);
 
 module.exports = router;

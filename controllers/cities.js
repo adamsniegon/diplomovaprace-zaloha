@@ -1,16 +1,15 @@
 const {City} = require('../dbConnection');
-const {GeneralError, NotFound, BadRequest} = require('../helpers/error');
-const {cityGeocode} = require('../helpers/geocoder');
+const {NotFound, BadRequest} = require('../helpers/error');
 
 /**
- * Get all places
+ * Get all cities
  * @param {*} req 
  * @param {*} res 
  * @param {*} next 
  */
 exports.getAllCities = async (req, res, next) => {
     try {
-        const cities = await City.find().populate({path: 'cityPlaces'})
+        const cities = await City.find();
         res.send({
             success: true,
             count: cities.length,
@@ -22,17 +21,19 @@ exports.getAllCities = async (req, res, next) => {
 }
 
 /**
- * Add place
+ * Get city
  * @param {*} req 
  * @param {*} res 
  * @param {*} next 
  */
-exports.addCity = async (req, res, next) => {
+exports.getCity = async (req, res, next) => {
     try {
-        const geocodeResult = await cityGeocode(req.body);
-        await City.create(geocodeResult);
-        res.send(geocodeResult);
+        const city = await City.findById(req.params.id);
+        res.send({
+            success: true,
+            data: city
+        });
     } catch (error) {
-        next(new GeneralError());
+        next(new NotFound());
     }
 }

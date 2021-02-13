@@ -25,16 +25,19 @@ const CitySchema = new mongoose.Schema({
     }
 }, {
     timestamps: true,
+    toJSON: {
+        virtuals: true
+    },
+    toObject: {
+        virtuals: true
+    },
     id: false
 });
 
-CitySchema.virtual('cityPlaces', {
+CitySchema.virtual('places', {
     ref: 'places',
     localField: '_id',
     foreignField: 'cityReference'
  });
- 
- CitySchema.set('toObject', { virtuals: true });
- CitySchema.set('toJSON', { virtuals: true });
 
 module.exports = CitySchema;

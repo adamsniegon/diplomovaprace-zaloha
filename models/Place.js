@@ -24,19 +24,26 @@ const PlaceSchema = new mongoose.Schema({
             coordinates: {
                 type: [Number]
             },
-        },
-        properties: {
-            streetName: String,
-            streetNumber: String,
-            city: String
-        },
+        }
     },
     cityReference: {
         type: Schema.Types.ObjectId,
         ref: 'places'
     }
 }, {
-    timestamps: true
+    timestamps: true,
+    toJSON: {
+        virtuals: true
+    },
+    toObject: {
+        virtuals: true
+    }
 });
+
+PlaceSchema.virtual('reviews', {
+    ref: 'reviews',
+    localField: '_id',
+    foreignField: 'placeReference'
+ });
 
 module.exports = PlaceSchema;
