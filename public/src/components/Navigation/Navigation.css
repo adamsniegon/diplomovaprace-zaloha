@@ -1,0 +1,39 @@
+.navigation{
+    list-style: none;
+    display: flex;
+}
+
+.navigation__link{
+    display: block;
+    padding: 20px 30px;
+}
+
+.navigation__link--active{
+    stroke: #ffffff;
+}
+
+.navigation__link--active .navigation__icon-group{
+    fill: #ff4663;
+    stroke: #ff4663;
+}
+
+.navigation__link--active .navigation__path{
+    fill: #ff4663;
+    stroke: #ff4663;
+}
+
+.navigation__link--active .navigation__circle-path{
+    fill: #ffffff;
+    stroke: #ff4663;
+}
+
+.navigation__link--active .navigation__pin-path{
+    fill: #ff4663;
+    stroke: #ffffff;
+}
+
+
+.navigation__icon{
+    display: block;
+    height: 30px;
+}
