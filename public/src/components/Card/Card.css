@@ -1,6 +1,6 @@
 .card{
     background: #ccc;
-    height: 270px;
+    height: 250px;
     border-radius: 30px;
     background-size: cover;
     background-position: center;
@@ -12,11 +12,17 @@
 }
 
 .card:hover{
-    box-shadow: 0px 0px 10px 0px #8b8b8b;
+    box-shadow: 0px 0px 10px 0px #858585;
 }
 
 .card__headline{
-    font-size: 24px;
+    font-weight: 600;
+    font-size: 18px;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
+}
+
+.card__pin-icon{
+    height: 15px;
+    margin-right: 10px;
 }

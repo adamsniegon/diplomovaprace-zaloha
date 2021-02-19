@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import {citiesFetch} from '../store/actions/citiesActions'
-import HomeSection from '../components/HomeSection/HomeSection';
+import HorizontalSection from '../components/HorizontalSection/HorizontalSection';
 
 function Home() {
     const citiesIds = useSelector(state => state.cities.citiesIds);
@@ -13,9 +13,7 @@ function Home() {
 
     return (
         <React.Fragment>
-            <h1>Hello!</h1>
-            <HomeSection headline="Objevujte" data={citiesIds}/>
-            <HomeSection headline="Oblíbená místa"/>
+            <HorizontalSection headline="Objevujte" data={citiesIds}/>
         </React.Fragment>
     );
   }

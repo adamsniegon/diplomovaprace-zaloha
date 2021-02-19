@@ -1,0 +1,17 @@
+.showmorelink{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 12px;
+    color: #1b1b1b;
+}
+
+.showmorelink:hover{
+    color: #ff4663;
+    font-weight: 600;
+}
+
+.showmorelink__icon{
+    margin-left: 5px;
+    width: 20px;
+}
