@@ -25,6 +25,12 @@ export const citiesFetchError = (error) => {
     }
 }
 
+export const citiesFetchRefresh = () => {
+    return {
+        type: citiesFetchTypes.CITIES_FETCH_REFRESH
+    }
+}
+
 export const citiesFetch = () => async (dispatch) => {
     dispatch(citiesFetchStart());
     try {

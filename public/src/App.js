@@ -2,7 +2,7 @@ import React from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navigation from './components/Navigation/Navigation';
 import Header from './components/Header/Header';
-import Home from './pages/Home';
+import Home from './pages/Home/Home';
 import Map from './pages/Map';
 import Profile from './pages/Profile';
 import './App.css';

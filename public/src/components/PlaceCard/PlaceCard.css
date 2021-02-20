@@ -1,30 +1,37 @@
-.card{
+.placecard{
     background: #ccc;
-    flex-basis: 150px;
-    height: 220px;
+    flex-basis: 270px;
+    height: 150px;
     border-radius: 30px;
     background-size: cover;
     background-position: center;
     color: #ffffff;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr auto auto;
     padding: 15px;
     margin-right: 20px;
 }
 
-.card:hover{
+.placecard:hover{
     box-shadow: 0px 0px 10px 0px #858585;
 }
 
-.card__headline{
+.placecard__headline{
     font-weight: 600;
     font-size: 18px;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
 }
 
-.card__pin-icon{
-    height: 15px;
+.placecard__city{
+    font-size: 14px;
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    margin-top: 5px;
+}
+
+.placecard__pin-icon{
+    height: 12px;
     margin-right: 10px;
 }
