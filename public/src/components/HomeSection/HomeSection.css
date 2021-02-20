@@ -1,0 +1,18 @@
+.homesection{
+    margin-bottom: 50px;
+}
+
+.homesection__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homesection__headline{
+    font-weight: 600;
+}
+
+.homesection__list{
+    display: flex;
+    margin-top: 20px;
+}

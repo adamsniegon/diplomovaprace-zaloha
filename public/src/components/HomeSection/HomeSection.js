@@ -2,16 +2,16 @@ import React from 'react';
 import Card from '../Card/Card';
 import Headline from '../Headline/Headline';
 import ShowMoreLink from '../ShowMoreLink/ShowMoreLink';
-import './HorizontalSection.css';
+import './HomeSection.css';
 
-function HorizontalSection({headline, data = []}) {    
+function HomeSection({headline, data = []}) {    
     return (
-        <div className="horizontalsection">
-            <div className="horizontalsection__header">
-                <Headline text="Objevujte"/>
+        <div className="homesection">
+            <div className="homesection__header">
+                <Headline text={headline}/>
                 <ShowMoreLink text="Zobrazit vše"/>
             </div>
-            <div className="horizontalsection__list">
+            <div className="homesection__list">
                 {[...data].reverse().map(id => (
                     <Card key={id} id={id}/>
                 ))}
@@ -20,4 +20,4 @@ function HorizontalSection({headline, data = []}) {
     );
   }
   
-  export default HorizontalSection;
+  export default HomeSection;
