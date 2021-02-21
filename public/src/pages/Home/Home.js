@@ -25,26 +25,30 @@ function Home() {
         <div>
 
             <div className="homesection">
-                <div className="homesection__header">
-                    <Headline text="Objevujte"/>
-                    <ShowMoreLink text="Zobrazit vše"/>
-                </div>
-                <div className="homesection__list">
-                    {[...citiesIds].reverse().map(id => (
-                        <CityCard key={id} id={id}/>
-                    ))}
+                <div className="wrapper">
+                    <div className="homesection__header">
+                        <Headline text="Objevujte"/>
+                        <ShowMoreLink text="Zobrazit vše"/>
+                    </div>
+                    <div className="homesection__list">
+                        {[...citiesIds].reverse().map(id => (
+                            <CityCard key={id} id={id}/>
+                        ))}
+                    </div>
                 </div>
             </div>
 
             <div className="homesection">
-                <div className="homesection__header">
-                    <Headline text="Místa"/>
-                    <ShowMoreLink text="Zobrazit vše"/>
-                </div>
-                <div className="homesection__list">
-                    {[...placesIds].reverse().map(id => (
-                        <PlaceCard key={id} id={id}/>
-                    ))}
+                    <div className="wrapper">
+                    <div className="homesection__header">
+                        <Headline text="Místa"/>
+                        <ShowMoreLink text="Zobrazit vše"/>
+                    </div>
+                    <div className="homesection__list">
+                        {[...placesIds].reverse().map(id => (
+                            <PlaceCard key={id} id={id}/>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
