@@ -45,5 +45,5 @@ PlaceSchema.virtual('reviews', {
     localField: '_id',
     foreignField: 'placeReference'
  });
-
+ 
 module.exports = PlaceSchema;

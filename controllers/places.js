@@ -28,12 +28,13 @@ exports.getAllPlaces = async (req, res, next) => {
  */
 exports.getPlace = async (req, res, next) => {
     try {
-        const place = await Place.findById(req.params.id);
+        const place = await Place.findById(req.params.id).populate({path: 'reviews'});
         res.send({
             success: true,
             data: place
         });
     } catch (error) {
+        console.log(error);
         next(new NotFound());
     }
 }

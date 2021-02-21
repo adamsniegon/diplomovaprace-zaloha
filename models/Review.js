@@ -16,7 +16,7 @@ const ReviewSchema = new mongoose.Schema({
         required: true
     },
     rating: {
-        type: mongoose.Decimal128,
+        type: Number,
         default: 0
     },
     placeReference: {
