@@ -1,20 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 import {useSelector, useDispatch} from 'react-redux';
-import {citiesFetch} from '../../store/actions/citiesActions';
-import {placesFetch} from '../../store/actions/placesActions';
+import {dataFetch} from '../../store/actions/dataActions';
 import pinIcon from '../../assets/icons/pin-icon.svg';
 import './Map.css';
 
 function Map() {
-    const dispatch = useDispatch();
+    /*const dispatch = useDispatch();
     const places = useSelector(state => state.places.places);
     const placesIds = useSelector(state => state.places.placesIds);
     const cities = useSelector(state => state.cities.cities);
 
     useEffect(() => {
         dispatch(citiesFetch());
-        dispatch(placesFetch());
     }, []);
 
     return (
@@ -41,6 +39,10 @@ function Map() {
                 ))}
             </MapContainer>
         </div>
+    );*/
+
+    return (
+        <div></div>
     );
   }
   

@@ -1,43 +1,49 @@
-import * as citiesFetchTypes from "../actions/types";
+import * as dataFetchTypes from "../actions/types";
 
 const initialState = {
     loading: false,
     error: null,
     cities: {},
-    citiesIds: []
+    places: {},
+    citiesIds: [],
+    placesIds: []
 }
 
-const citiesReducer = (state = initialState, action) => {
+const dataReducer = (state = initialState, action) => {
     switch (action.type) {
-        case citiesFetchTypes.CITIES_FETCH_START:
+        case dataFetchTypes.DATA_FETCH_START:
             return {
                 ...state,
                 loading: true,
                 error: null
             }
 
-        case citiesFetchTypes.CITIES_FETCH_SUCCESS:
+        case dataFetchTypes.DATA_FETCH_SUCCESS:
             return {
                 ...state,
                 loading: false,
                 cities: action.payload.cities,
-                citiesIds: action.payload.citiesIds
+                places: action.payload.places,
+                citiesIds: action.payload.citiesIds,
+                placesIds: action.payload.placesIds
             }
 
-        case citiesFetchTypes.CITIES_FETCH_ERROR:
+        case dataFetchTypes.DATA_FETCH_ERROR:
             return {
                 ...state,
                 loading: false,
                 error: action.payload.error
             }
 
-        case citiesFetchTypes.CITIES_FETCH_REFRESH:
+        case dataFetchTypes.DATA_FETCH_REFRESH:
             return {
                 ...state,
                 loading: false,
                 error: null,
                 cities: {},
-                citiesIds: []
+                places: {},
+                citiesIds: [],
+                placesIds: []
             }
 
         default:
@@ -45,4 +51,4 @@ const citiesReducer = (state = initialState, action) => {
     }
 }
 
-export default citiesReducer;
+export default dataReducer;

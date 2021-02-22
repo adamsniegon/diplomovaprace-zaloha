@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {dataFetch} from './store/actions/dataActions';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navigation from './components/Navigation/Navigation';
 import Header from './components/Header/Header';
@@ -10,6 +12,12 @@ import PlaceDetail from './pages/PlaceDetail/PlaceDetail';
 import './App.css';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(dataFetch());
+  });
+
   return (
     <div className="App">
       <Router>
@@ -20,8 +28,8 @@ function App() {
           <Route exact path="/map" component={Map}/>
           <Route exact path="/profile" component={Profile}/>
         </Switch>
-        <Route path="/cities/:cityId" component={CityList}/>
-        <Route path="/places/:placeId" component={PlaceDetail}/>
+        {/*<Route path="/cities/:cityId" component={CityList}/>
+        <Route path="/places/:placeId" component={PlaceDetail}/>*/}
       </Router>
     </div>
   );

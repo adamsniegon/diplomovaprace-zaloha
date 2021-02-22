@@ -1,10 +1,8 @@
-import citiesReducer from './citiesReducer';
-import placesReducer from './placesReducer';
+import dataReducer from './dataReducer';
 import {combineReducers} from 'redux';
 
 const allReducers = combineReducers({
-    cities: citiesReducer,
-    places: placesReducer
+    data: dataReducer
 });
 
 export default allReducers;
