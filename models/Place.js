@@ -37,8 +37,16 @@ const PlaceSchema = new mongoose.Schema({
     },
     toObject: {
         virtuals: true
-    }
+    },
+    id: false
 });
+
+PlaceSchema.virtual('city', {
+    ref: 'cities',
+    localField: 'cityReference',
+    foreignField: '_id',
+    justOne: true
+ });
 
 PlaceSchema.virtual('reviews', {
     ref: 'reviews',
