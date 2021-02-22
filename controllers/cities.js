@@ -9,7 +9,7 @@ const {NotFound, BadRequest} = require('../helpers/error');
  */
 exports.getAllCities = async (req, res, next) => {
     try {
-        const cities = await City.find();
+        const cities = await City.find().populate({path: 'places'});
         res.send({
             success: true,
             count: cities.length,
