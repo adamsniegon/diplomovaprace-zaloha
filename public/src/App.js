@@ -5,6 +5,8 @@ import Header from './components/Header/Header';
 import Home from './pages/Home/Home';
 import Map from './pages/Map/Map';
 import Profile from './pages/Profile/Profile';
+import CityList from './pages/CitiesList/CitiesList';
+import PlaceDetail from './pages/PlaceDetail/PlaceDetail';
 import './App.css';
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           <Route exact path="/map" component={Map}/>
           <Route exact path="/profile" component={Profile}/>
         </Switch>
+        <Route path="/cities/:cityId" component={CityList}/>
+        <Route path="/places/:placeId" component={PlaceDetail}/>
       </Router>
     </div>
   );

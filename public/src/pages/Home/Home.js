@@ -1,11 +1,8 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import CityCard from '../../components/CityCard/CityCard';
-import PlaceCard from '../../components/PlaceCard/PlaceCard';
-import Headline from '../../components/Headline/Headline';
-import ShowMoreLink from '../../components/ShowMoreLink/ShowMoreLink';
+import {Link} from 'react-router-dom';
 import {citiesFetch} from '../../store/actions/citiesActions';
-import {placesFetch} from '../../store/actions/placesActions';
+import {allPlacesFetch} from '../../store/actions/placesActions';
 import './Home.css';
 
 function Home() {
@@ -15,42 +12,20 @@ function Home() {
 
     useEffect(() => {
         dispatch(citiesFetch());
-    }, []);
-
-    useEffect(() => {
-        dispatch(placesFetch());
+        dispatch(allPlacesFetch());
     }, []);
 
     return (
         <div>
+            <h1>Města</h1>
+            {citiesIds && citiesIds.map(id => (
+                <Link key={id} to={`/cities/${id}`}>{id}</Link>
+            ))}
 
-            <div className="homesection">
-                <div className="wrapper">
-                    <div className="homesection__header">
-                        <Headline text="Objevujte"/>
-                        <ShowMoreLink text="Zobrazit vše"/>
-                    </div>
-                    <div className="homesection__list">
-                        {[...citiesIds].reverse().map(id => (
-                            <CityCard key={id} id={id}/>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            <div className="homesection">
-                    <div className="wrapper">
-                    <div className="homesection__header">
-                        <Headline text="Místa"/>
-                        <ShowMoreLink text="Zobrazit vše"/>
-                    </div>
-                    <div className="homesection__list">
-                        {[...placesIds].reverse().map(id => (
-                            <PlaceCard key={id} id={id}/>
-                        ))}
-                    </div>
-                </div>
-            </div>
+            <h1>Místa</h1>
+            {placesIds && placesIds.map(id => (
+                <Link key={id} to={`/places/${id}`}>{id}</Link>
+            ))}
         </div>
     );
   }

@@ -31,7 +31,7 @@ export const placesFetchRefresh = () => {
     }
 }
 
-export const placesFetch = () => async (dispatch) => {
+export const allPlacesFetch = () => async (dispatch) => {
     dispatch(placesFetchStart());
     try {
         const places = await axios.get('/api/places');
@@ -42,5 +42,14 @@ export const placesFetch = () => async (dispatch) => {
         dispatch(placesFetchSuccess(normalizedData.entities.places, normalizedData.result));
     } catch (error) {
         dispatch(placesFetchError(error));
+    }
+}
+
+export const placeFetch = (placeId) => async (dispatch) => {
+    try {
+        const place = await axios.get(`/api/places/${placeId}`);
+        console.log(place);
+    } catch (error) {
+
     }
 }

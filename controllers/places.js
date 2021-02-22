@@ -26,7 +26,7 @@ exports.getAllPlaces = async (req, res, next) => {
  * @param {*} res 
  * @param {*} next 
  */
-exports.getPlace = async (req, res, next) => {
+exports.getPlaceReviews = async (req, res, next) => {
     try {
         const place = await Place.findById(req.params.id).populate({path: 'reviews'});
         res.send({
@@ -34,7 +34,6 @@ exports.getPlace = async (req, res, next) => {
             data: place
         });
     } catch (error) {
-        console.log(error);
         next(new NotFound());
     }
 }
