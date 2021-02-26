@@ -1,10 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './ShowMoreLink.css';
 import showMoreIcon from '../../assets/icons/showmore-icon.svg';
 
-function ShowMoreLink({text}) {    
+function ShowMoreLink({link, text}) {    
     return (
-        <a className="showmorelink" href="">{text}<img className="showmorelink__icon" src={showMoreIcon}></img></a>
+        <Link className="showmorelink" to={link}>{text}<img className="showmorelink__icon" src={showMoreIcon}></img></Link>
     );
   }
   

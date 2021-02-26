@@ -1,17 +1,21 @@
 .showmorelink{
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     text-decoration: none;
     font-size: 12px;
     color: #1b1b1b;
+    padding: 5px 10px;
+    border-radius: 50px;
+    background: #ececec;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .showmorelink:hover{
-    color: #ff4663;
-    font-weight: 600;
+    background: #dfdfdf;
 }
 
 .showmorelink__icon{
-    margin-left: 5px;
-    width: 20px;
+    margin-left: 10px;
+    width: 5px;
 }

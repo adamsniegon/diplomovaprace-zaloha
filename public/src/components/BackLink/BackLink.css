@@ -1,0 +1,24 @@
+.backlink{
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 20px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.backlink__link{
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 12px;
+    background: #ececec;
+}
+
+.backlink__link:hover{
+    background: #dfdfdf;
+}
+
+.backlink__icon{
+    width: 5px;
+    margin-right: 10px;
+}

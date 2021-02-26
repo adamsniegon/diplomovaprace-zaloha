@@ -8,11 +8,12 @@
     align-items: center;
 }
 
-.homesection__headline{
-    font-weight: 600;
+@media only screen and (max-width: 260px) {
+    .homesection__header{
+        flex-wrap: wrap;
+    }
 }
 
-.homesection__list{
-    display: flex;
-    margin-top: 20px;
+.homesection__headline{
+    font-weight: 600;
 }
