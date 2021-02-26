@@ -1,0 +1,10 @@
+.placeslist{
+    display: flex;
+    margin-top: 20px;
+}
+
+.placeslist__link{
+    flex-basis: 270px;
+    text-decoration: none;
+    margin-right: 20px;
+}

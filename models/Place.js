@@ -24,6 +24,9 @@ const PlaceSchema = new mongoose.Schema({
             coordinates: {
                 type: [Number]
             },
+        },
+        properties: {
+            city: String
         }
     },
     cityReference: {
