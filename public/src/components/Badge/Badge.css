@@ -1,0 +1,11 @@
+.badge{
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50px;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+.badge__text{
+    font-size: 12px;
+}

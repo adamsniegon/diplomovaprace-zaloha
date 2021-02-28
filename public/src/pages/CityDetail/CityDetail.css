@@ -1,3 +1,7 @@
+.citydetail__wrapper{
+    max-width: 700px;
+}
+
 .cityplaceslist{
     display: flex;
     margin-top: 20px;

@@ -3,6 +3,8 @@ import {useSelector} from 'react-redux';
 import {Link, useParams} from 'react-router-dom';
 import PlaceCard from '../../components/PlaceCard/PlaceCard';
 import BackLink from '../../components/BackLink/BackLink';
+import BadgeBar from '../../components/BadgeBar/BadgeBar';
+import Badge from '../../components/Badge/Badge';
 import './CityDetail.css';
 
 function CityDetail() {
@@ -10,11 +12,27 @@ function CityDetail() {
     const city = useSelector(state => state.data.cities[cityId]);
     const placesIds = useSelector(state => city ? state.data.cities[cityId].places : []);
 
+    const badgeText = (numberOfPlaces) => {
+        if (numberOfPlaces === 1) {
+            return numberOfPlaces + " místo";
+        } else if (numberOfPlaces > 1 && numberOfPlaces < 5) {
+            return numberOfPlaces + " místa";
+        } else {
+            return numberOfPlaces + " míst";
+        }
+    }
+
     return (
-        <div className="wrapper">
+        <div className="citydetail wrapper">
             <BackLink/>
-            <h1>{city && city.name}</h1>
-            <p>{city && city.description}</p>
+            <div className="citydetail__wrapper">
+                <h1>{city && city.name}</h1>
+                <BadgeBar>
+                    <Badge text={city && (badgeText(city.places.length))} color="#ff4663"/>
+                    <Badge text={city && (city.location.geometry.coordinates[0] + ", " + city.location.geometry.coordinates[1])} color="#888888"/>
+                </BadgeBar>
+                <p>{city && city.description}</p>
+            </div>
             <div className="cityplaceslist">
                 {placesIds && placesIds.map(id => (
                     <Link className="cityplaceslist__link" to={`/places/${id}`} key={id}>
