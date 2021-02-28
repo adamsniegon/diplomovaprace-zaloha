@@ -24,6 +24,12 @@ function CityDetail() {
 
     return (
         <div className="citydetail wrapper">
+            <div className="citydetail__hero" style={{backgroundImage: `
+            linear-gradient(to right, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 50%),
+            linear-gradient(to left, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 50%),
+            linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 50%),
+            linear-gradient(to bottom, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 50%),
+            url(${city && city.image})`}}></div>
             <BackLink/>
             <div className="citydetail__wrapper">
                 <h1>{city && city.name}</h1>
