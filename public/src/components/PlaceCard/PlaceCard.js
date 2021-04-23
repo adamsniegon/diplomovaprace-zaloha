@@ -9,7 +9,7 @@ function PlaceCard({id}) {
     return (
         <div className="placecard" style={{backgroundImage: `linear-gradient(to top, rgba(41, 41, 41, 1) 0%, rgba(255, 255, 255, 0) 70%), url(${place && place.image})`}}>
             <h1 className="placecard__headline">{place && place.name}</h1>
-            <p className="placecard__city"><img className="placecard__pin-icon" src={pinIcon}></img>{place.location.properties.city}</p>
+            <p className="placecard__city"><img className="placecard__pin-icon" src={pinIcon}></img>{place && place.location.properties.city}</p>
         </div>
     );
   }
